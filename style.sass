@@ -1,249 +1,163 @@
-body 
-    margin: 0
-    font-family: Arial 
-
-a
+@font-face 
+  font-family: RWBY
+  src: url(/assets/RWBY-Z.ttf)
+    
+body
     color: white
+    background-color: black
+    margin: 0
 
-#background
-    position: absolute
-    z-index: -999
-    background-repeat: no-repeat
-    background-size: cover
-    height: 100%
+.parallax
+  height: 100vh
+  overflow-x: hidden
+  perspective: 1px
+
+.parallax-layer
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+
+.layer1
+  transform: translateZ(-4px) scale(6)
+
+.layer2
+  transform: translateZ(-2px) scale(3)
+
+.layer3
+  transform: translateZ(0)
+
+
+div
+  font-size: 50px
+  text-align: center
+
+.parallax-layer
+  &.layer1
+    width: 100%
+    background-image: url("/assets/clouds.png")
+    background-repeat: repeat
+
+  &.layer2
+    top: 10rem
+    height: 120%
+    width: 100%
+    background-image: url("/assets/stars.png")
+    background-repeat: repeat
+
+  &.layer3
+    top: 20rem
     width: 100%
 
-.page
+
+.content
+    z-index: 5
     display: flex
-    flex-direction: column
-    align-items: center
-    position: absolute
-    left: 50%
-    top: 50%
-    transform: translate(-50%, -50%)
-    max-height: 90%
-    overflow: auto
-    overflow-y: auto
-    overflow-x: hidden
-    border-radius: 25px
-    background-color: rgba(0, 0, 0, 0.7)
-    color: white
-
-.button
-    font-size: 2em
-    color: white
-    text-decoration: none
-    margin-top: 50px
-    display: flex
-    align-items: center
-    justify-content: center
-    width: 300px
-    min-height: 55px
-    border-radius: 50px
-    background-color: rgba(255, 255, 255, 0.25)
-
-.button:hover
-    background-color: rgba(255, 255, 255, 0.5)
-
-.button:last-of-type
-    margin-bottom: 50px
-
-.moon
-    width: 35%
-    border-bottom: 5px white solid
-
-.about
-    box-sizing: border-box
-    padding: 25px
-    font-size: 1.1em
-    display: flex
+    width: 1500px
+    margin-top: 300px
     flex-direction: row
-    justify-content: space-between
-    align-items: start
-    overflow-y: auto
-    max-height: 90%
+    box-sizing: border-box
 
-.about p
-    margin-top: 0
+.left
+    width: 50%
+    box-sizing: border-box
+    margin-right: 15px
+
+.right
+    margin-top: 400px
+    width: 50%
+    box-sizing: border-box
+    margin-left: 15px
 
 .infobox
     box-sizing: border-box
-    min-width: 250px
-    max-width: 250px
-    overflow: hidden
-    border-radius: 15px
-    background-color: rgba(255, 255, 255, 0.25)
-    display: flex
-    flex-direction: column
+    text-align: left
+    border-left: 3px solid #FFFFFF
+    border-top: 3px solid #FFFFFF
+    border-bottom: 3px solid #808080
+    border-right: 3px solid #808080
+    background-color: #C0C0C0
+    color: black
+    font-family: Arial, Helvetica, sans-serif
+    font-size: 25px
+    padding: 0px
 
-.infobox img
-    width: 100%
+.info_content
+    color: black
+    font-family: Arial, Helvetica, sans-serif
+    font-size: 25px
+    margin: 15px
+    text-align: left
 
-.info
-    margin: 0
-    box-sizing: border-box
-    margin: 10px
-    display: flex
-    justify-content: space-between
-
-.info p
-    margin: 0
-
-.about a
+.infobox .header
+    text-align: left
     color: white
-
-.about a:visited
-    color: white
-
-.sections
-    display: flex
-
-.section
-    width: 50%
-
-.section li
-    font-size: 0.8em
-
-.about_text
-    margin-left: 15px
-
-.catagory
-    width: 50%
-
-.interests
-    padding: 25px
-    box-sizing: border-box
-    display: flex
-    width: 45%
-
-.catagory_group
-    width: 100%
-    display: flex
-    flex-direction: row
-
-.interests a:visited
-    color: white
-
-.creations
-    padding: 20px
-    font-size: 1.3em
-
-.creations img
-    margin-bottom: 10px
-
-.link
-    font-size: 2em
-    color: white
-    text-decoration: none
-    display: flex
-    align-items: center
-    justify-content: center
-    width: 300px
-    min-height: 55px
-    border-radius: 50px
-    background-color: rgba(255, 255, 255, 0.25)
-
-.link img
-    height: 25px
-    margin-right: 10px
-
-.link:hover
-    background-color: rgba(255, 255, 255, 0.5)
-
-.links
-    padding: 20px
-    display: flex
-    
-.linkgroup
-    margin-top: 15px
-    gap: 15px
-    height: 55px
-    display: flex
-    flex-direction: row
+    font-size: 30px
+    margin-bottom: 15px
+    background: rgb(0,0,128)
+    background: linear-gradient(90deg, rgba(0,0,128,1) 0%, rgba(16,132,208,1) 100%)
 
 @media (orientation: portrait)
-    .page
-        width: 90%
-        height: 90%
-        overflow: auto
-        display: flex
-        align-items: center
-        justify-content: space-between
-        padding-bottom: 50px
-    
-    .button
-        border-radius: 150px
-        width: 80%
-        min-height: 140px
-        font-size: 5em
+  .left
+    width: 90%
 
-    .moon
-        width: 80%
-        border-bottom: 10px white solid
+  .right
+      margin-top: 150px
+      width: 90%
 
-    .infobox
-        min-width: 80%
-        min-height: 940px
-        margin-bottom: 30px
+  .content
+      width: 100%
+      justify-content: center
+      align-items: center
+      flex-direction: column
+      text-align: center
+  
+  .layer3 img
+    width: 85%
 
-    .about
-        padding: 100px
-        margin: 5px
-        font-size: 3.5em
-        flex-direction: column
+@media (max-width: 1500px)
+  .left
+    width: 90%
 
-    .about_text
-        margin-left: 0px
-        
-    .interests
-        font-size: 2em
+  .right
+      margin-top: 150px
+      width: 90%
 
-    .catagory
-        width: 100%
+  .content
+      width: 100%
+      justify-content: center
+      align-items: center
+      flex-direction: column
+      text-align: center
+  
+  .layer3 img
+    width: 85%
 
-    .catagory_group
-        display: flex
-        flex-direction: column
+.link img
+  height: 50px
+  width: auto
+  margin-right: 15px
 
-    .creations
-        font-size: 3em
-        height: auto
+.link 
+  color: white
+  text-decoration: none
+  font-family: Arial, Helvetica, sans-serif
+  font-size: 35px
+  line-height: 35px
+  border-radius: 200px
+  padding: 15px
+  display: flex
+  margin-bottom: 15px
+  width: 300px
+  align-items: center
+  justify-content: center
 
-    .creations img
-        margin: 0
-        width: 90%
+.links
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  justify-content: space-evenly 
 
-    .links
-        height: auto
-
-    .link
-        font-size: 3em
-        height: 150px
-        width: 100%
-        border-radius: 200px
-
-    .link img
-        height: 3rem
-        margin-right: 15px
-
-    .linkgroup
-        margin-bottom: 5px
-        height: 100%
-        width: 80%
-        flex-direction: column
-
-@media (min-width: 2000px)
-    html
-        height: 100%
-    body
-        height: 100%
-    .page
-        max-height: 90%
-    .button
-        margin-top: 50px
-        width: 21rem
-        min-height: 4rem
-        border-radius: 550px
-        background-color: rgba(255, 255, 255, 0.25)
-    .about
-        font-size: 1.3em
+.link:hover
+  
