@@ -41,14 +41,14 @@ div {
 
 .parallax-layer.layer1 {
   width: 100%;
-  background-image: url("./assets/clouds.png");
+  background-image: url("/assets/clouds.png");
   background-repeat: repeat;
 }
 .parallax-layer.layer2 {
   top: 10rem;
   height: 120%;
   width: 100%;
-  background-image: url("./assets/stars.png");
+  background-image: url("/assets/stars.png");
   background-repeat: repeat;
 }
 .parallax-layer.layer3 {
